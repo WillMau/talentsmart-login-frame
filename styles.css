@@ -13,8 +13,8 @@ body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 15px;
     line-height: 1.6;
-    color: #222222;
-    background: #ffffff;
+    color: #ffffff;
+    background: #1d3260;
     overflow-x: hidden;
 }
 
@@ -22,7 +22,7 @@ body {
 .container {
     max-width: 700px;
     width: 100%;
-    padding: 32px 24px;
+    padding: 40px 28px;
     margin: 0 auto;
 }
 
@@ -32,43 +32,36 @@ body {
     margin-bottom: 40px;
 }
 
-.logo-placeholder {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 220px;
-    height: 60px;
-    background: linear-gradient(135deg, #0ACC8B 0%, #002D61 100%);
-    border-radius: 8px;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.5px;
+.logo {
+    max-width: 240px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    margin-bottom: 48px;
-    padding: 24px 16px;
-    background: linear-gradient(135deg, rgba(10, 204, 139, 0.05) 0%, rgba(0, 45, 97, 0.05) 100%);
-    border-radius: 12px;
+    margin-bottom: 56px;
+    padding: 32px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
-    color: #002D61;
+    color: #ffffff;
     margin-bottom: 16px;
     line-height: 1.3;
 }
 
 .subheading {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
-    color: #222222;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
     max-width: 540px;
     margin: 0 auto;
@@ -77,37 +70,92 @@ body {
 /* Section Headings */
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    color: #002D61;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #0ACC8B;
+    color: #ffffff;
+    margin-bottom: 32px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 16px;
 }
 
-/* Customer Voices Section */
-.customer-voices {
-    margin-bottom: 48px;
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #0ACC8B 0%, #0ACC8B 100%);
+    border-radius: 2px;
 }
 
-.quote-card {
-    background: #F7F7F7;
-    padding: 24px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    border-left: 4px solid #0ACC8B;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Values Section */
+.values-section {
+    margin-bottom: 40px;
 }
 
-.quote-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 45, 97, 0.1);
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
+.value-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 28px 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #0ACC8B;
+    box-shadow: 0 8px 24px rgba(10, 204, 139, 0.2);
+}
+
+.value-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #0ACC8B 0%, #0ACC8B 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(10, 204, 139, 0.3);
+}
+
+.value-icon img {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1);
+}
+
+.value-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Legacy Quote Classes (kept for backwards compatibility) */
 .quote {
     font-size: 15px;
     line-height: 1.7;
-    color: #222222;
+    color: rgba(255, 255, 255, 0.9);
     font-style: italic;
     margin-bottom: 12px;
 }
@@ -115,80 +163,49 @@ h2 {
 .quoteAuthor {
     font-size: 13px;
     font-weight: 600;
-    color: #002D61;
+    color: #0ACC8B;
     text-align: right;
-}
-
-/* Focus This Week Section */
-.focus-week {
-    background: linear-gradient(135deg, rgba(0, 45, 97, 0.03) 0%, rgba(10, 204, 139, 0.03) 100%);
-    padding: 28px 24px;
-    border-radius: 12px;
-    margin-bottom: 32px;
-}
-
-.focus-week h2 {
-    border-bottom-color: #002D61;
-}
-
-.focus-week ul {
-    list-style: none;
-    padding: 0;
-}
-
-.focus-week li {
-    padding-left: 28px;
-    margin-bottom: 16px;
-    position: relative;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #222222;
-}
-
-.focus-week li:last-child {
-    margin-bottom: 0;
-}
-
-.focus-week li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    background: #0ACC8B;
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
 }
 
 /* Responsive Adjustments for Narrow Iframes */
 @media (max-width: 600px) {
     .container {
-        padding: 24px 16px;
+        padding: 32px 20px;
     }
 
     .hero h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
-    .logo-placeholder {
-        width: 180px;
-        height: 50px;
-        font-size: 12px;
+    .logo {
+        max-width: 200px;
+    }
+
+    .value-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .value-icon img {
+        width: 32px;
+        height: 32px;
     }
 }
 
 @media (min-width: 601px) and (max-width: 700px) {
     .container {
-        padding: 28px 20px;
+        padding: 36px 24px;
+    }
+}
+
+/* Wider screens - show 2 columns */
+@media (min-width: 600px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
     }
 }
