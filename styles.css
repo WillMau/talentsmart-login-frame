@@ -192,18 +192,27 @@ h2::after {
     }
 }
 
-/* Wider screens - show 2 columns */
+/* Wider screens - show 3 columns with last 2 centered */
 @media (min-width: 600px) {
     .values-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 16px;
     }
 
-    /* Center the 5th value card */
+    /* First 3 cards take 2 columns each (full row) */
+    .value-card:nth-child(1),
+    .value-card:nth-child(2),
+    .value-card:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    /* Last 2 cards centered - each takes 2 columns with 1 column gap on sides */
+    .value-card:nth-child(4) {
+        grid-column: 2 / 4;
+    }
+
     .value-card:nth-child(5) {
-        grid-column: 1 / -1;
-        max-width: calc(50% - 8px);
-        margin: 0 auto;
+        grid-column: 4 / 6;
     }
 }
 
