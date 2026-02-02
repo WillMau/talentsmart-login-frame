@@ -37,6 +37,7 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
+    filter: brightness(0) invert(1);
 }
 
 /* Hero Section */
@@ -131,10 +132,9 @@ h2::after {
     box-shadow: 0 4px 16px rgba(10, 204, 139, 0.3);
 }
 
-.value-icon img {
+.value-icon svg {
     width: 36px;
     height: 36px;
-    filter: brightness(0) invert(1);
 }
 
 .value-card h3 {
@@ -207,5 +207,12 @@ h2::after {
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+
+    /* Center the 5th value card */
+    .value-card:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 12px);
+        margin: 0 auto;
     }
 }
